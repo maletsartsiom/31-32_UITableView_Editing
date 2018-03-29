@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ARViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ARViewController *controller = [[ARViewController alloc]init];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
+    
+    self.window.rootViewController = navigationController;
+    
+    
     return YES;
 }
 

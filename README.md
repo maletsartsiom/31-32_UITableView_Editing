@@ -1,5 +1,5 @@
 # 31-32_UITableView_Editing
-[without a storyboard] dynamicCells_ Adding sections and cells, removing cells, changing number of students in the footers
+[without a storyboard] dynamicCells_ Adding sections and cells, removing cells, changing number of students in footers
 
 iOS Development Course
 <p align="center">

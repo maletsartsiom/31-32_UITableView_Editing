@@ -1,5 +1,5 @@
 # 31-32_UITableView_Editing
-[no storyboard] Adding sections and cells, removing cells, changing number of students in the footers
+[without a storyboard] Adding sections and cells, removing cells, changing number of students in the footers
 
 iOS Development Course
 <p align="center">

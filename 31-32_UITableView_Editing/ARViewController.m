@@ -51,7 +51,7 @@
     
     for (int i = arc4random_uniform(2)+2; i > 0; i--) {
         
-        ARGroup* group = [[ARGroup alloc] init];
+        ARGroup *group = [[ARGroup alloc] init];
         group.name = [NSString stringWithFormat:@"A GROUP OF STUDENTS #%d", i];
         
         NSMutableArray* tempArray = [NSMutableArray array];
@@ -109,7 +109,7 @@
 
 - (nullable NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     
-    ARGroup* group = [self.groupsArray objectAtIndex:section];
+    ARGroup *group = [self.groupsArray objectAtIndex:section];
     return [NSString stringWithFormat:@"Number of students in the group: %ld ", [group.students count]];
 
 }
@@ -119,7 +119,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    ARGroup* group = [self.groupsArray objectAtIndex:section];
+    ARGroup *group = [self.groupsArray objectAtIndex:section];
     
     return [group.students count]+1;
     
@@ -205,11 +205,11 @@
             sourceGroup.students = tempArray;
             
             [tableView beginUpdates];
-            
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-            [tableView footerViewForSection:indexPath.section].textLabel.text = [self tableView:tableView titleForFooterInSection:indexPath.section];
-            
             [tableView endUpdates];
+            
+            //footer students number
+            [tableView footerViewForSection:indexPath.section].textLabel.text = [self tableView:tableView titleForFooterInSection:indexPath.section];
         }
     }
 
@@ -230,8 +230,8 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     
     
-    ARGroup* sourceGroup = [self.groupsArray objectAtIndex:sourceIndexPath.section];
-    ARStudent* student = [sourceGroup.students objectAtIndex:sourceIndexPath.row-1];
+    ARGroup *sourceGroup = [self.groupsArray objectAtIndex:sourceIndexPath.section];
+    ARStudent *student = [sourceGroup.students objectAtIndex:sourceIndexPath.row-1];
     
     NSMutableArray* tempArray = [NSMutableArray arrayWithArray:sourceGroup.students];
     
@@ -251,6 +251,9 @@
         [tempArray insertObject:student atIndex:destinationIndexPath.row-1];
         destinationGroup.students = tempArray;
         
+        //footer students number
+        [tableView footerViewForSection:sourceIndexPath.section].textLabel.text = [self tableView:tableView titleForFooterInSection:sourceIndexPath.section];
+        [tableView footerViewForSection:destinationIndexPath.section].textLabel.text = [self tableView:tableView titleForFooterInSection:destinationIndexPath.section];
     }
     
 }

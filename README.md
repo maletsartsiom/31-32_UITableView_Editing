@@ -1,6 +1,6 @@
 # 31-32_UITableView_Editing
 
-[without a storyboard]
+[without storyboards]
 
 <b>DynamicCells</b>
 <br>

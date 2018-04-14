@@ -2,7 +2,8 @@
 
 <b>DynamicCells</b>
 <br>
-[without a storyboard] 
+[without a storyboard]
+<br>
 <b>Adding sections and cells, removing cells, changing number of students in footers</b>
 
 iOS Development Course

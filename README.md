@@ -1,8 +1,8 @@
 # 31-32_UITableView_Editing
 
-<b>DynamicCells</b>
-<br>
 [without a storyboard]
+
+<b>DynamicCells</b>
 <br>
 <b>Adding sections and cells, removing cells, changing number of students in footers</b>
 
